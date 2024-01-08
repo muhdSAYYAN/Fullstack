@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&family=Raleway:ital,wght@0,100;0,200;1,100&display=swap");
+.banner {
+  width: 100%;
+  height: 525px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(109, 109, 109);
+}
+.title {
+  width: 300px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title h1 {
+  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+.bed {
+  width: 300px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.bed h1 {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
+}
+.bed button {
+  border: hidden;
+  background-color: orange;
+  height: 40px;
+  width: 100px;
+  border-radius: 20px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+.bed img {
+  height: 280px;
+}
+.light {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.view{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.view button{
+    border: 3px solid orange;
+    background-color: rgb(254, 253, 253);
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    color:orange;
+}
+.footer{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(211, 210, 210);
+}
+.footer h1{
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-family: "Raleway", sans-serif;
+}
+.inp{
+    width: 420px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+.inp input{
+  height: 40px;
+  width: 320px;
+  background-color: white;
+  border: 1px solid gray;
+  outline: none;
+  text-align: center;
+}
+.inp button{
+  height: 40px;
+  width: 80px;
+  background-color: orange;
+  color: white;
+  border-radius: 1px;
+  border: hidden;
+
+
+}
+.footer-1{
+  width: 80%;
+  height: 270px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: auto;
+}
+.info{
+  width: 200px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.footer-1 h1{
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+
+}
+.info img{
+  width: 25px;
+  height: 25px;
+}
+.info span{
+  opacity: 0.7;
+  font-size: small;
+}
+
+.bed:hover{
+  box-shadow: 0 0 5px gray;
+  border-radius: 5px;
+}
+@media(max-width:500px){
+  *{
+      overflow-x: hidden;
+  }
+  .banner{
+      width: 100%;
+      height: 150px;
+  }
+  .light{
+    width: 100%;
+    height: 250px;
+  }
+  .bed img{
+    width: 80px;
+    height: 130px;
+  }
+  .title h1{
+    font-size: 18px;
+  }
+  .bed h1{
+    font-size: 15px;
+  }
+  .bed{
+    height: 200px;
+  }
+  .bed button{
+    width: 80px;
+    font-size: 10px;
+    height: 20px;
+  }
+  .light{
+    overflow-y: hidden;
+  }
+  .footer{
+    width: 100%;
+    height: 150px;
+  }
+  .footer input{
+    width: 150px;
+    height: 40px;
+  }
+.footer h1{
+  font-size: 15px;
+  text-align: center;
+}
+.inp{
+  width: 63%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-1{
+  height: 200px;
+}
+.info{
+  height: 200px;
+}
+.info span{
+  font-size: 10px;
+}
+
+.view button{
+  width: 125px;
+  height: 35px;
+  font-size: 10px;
+
+}
+.info img{
+  width: 20px;
+  height: 20px;
+}
+
+
+  }

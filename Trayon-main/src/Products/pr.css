@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&family=Raleway:ital,wght@0,100;0,200;1,100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&family=Raleway:ital,wght@0,100;0,200;1,100&family=Ubuntu:wght@300;400&display=swap');
+
+.filterbar{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.color{
+    background-color: orange;
+    color: white;
+    border: hidden;
+}
+.filterbar input{
+    border-radius: 5px;
+    width: 300px;
+    height: 35px;
+    border: 1.5px solid orange;
+    outline: none;
+    color: orange;
+}
+.sr-bar{
+    width: 350px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.sr-bar img{
+    height: 30px;
+    width: 30px;
+}
+.products{
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+
+}
+.cards{
+    width: 30%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.cards:hover{
+    box-shadow: 0 0 5px gray;
+    border-radius: 5px;
+}
+.cards img{
+    width: 95%;
+    height: 300px;
+
+}
+.cards h1{
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+}
+.cards button{
+    border: 3px solid orange;
+    background-color: rgb(254, 253, 253);
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    color:orange;
+    font-size: small;
+    font-family: "Poppins", sans-serif;
+}
+.cards span{
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+.cards h6{
+    color: rgb(144, 95, 3);
+
+}
+.price{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.emi{
+    opacity: 0.7;
+}
+.details{
+    width: 90%;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+}
+.details-1{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+.details-2{
+    width: 40%;
+    height: 500px;
+}
+.details-1 h1{
+    font-weight: 600;
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+    font-family: "Raleway", sans-serif;
+
+}
+.angles{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.angles img{
+    width: 110px;
+    height: 70px;
+    border: 1px solid rgb(207, 206, 206);
+}
+.add{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    height: 80px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+.wish{
+    width: 160px;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid orange;
+    border-radius: 3px;
+
+}
+.wish img{
+    width: 25px;
+    height: 25px;
+
+}
+.wish h1{
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 0.7;
+    font-family: "Poppins", sans-serif;
+    font-family: "Raleway", sans-serif;
+}    
+.free{
+    width: 100%;
+    height: 40px;
+}
+.sale{
+    width: 120px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: rgb(254, 167, 3);
+}
+.sale h1{
+    font-size: 25px;
+    color: white;
+
+}
+.material{
+    width: 170px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.material h1{
+    font-size: 15px;
+    opacity: 0.7;
+
+}
+.material span{
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid orange;
+}
+.prices{
+    width: 60%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.mrp{
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+  
+}
+.mrpp{
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+.price2{
+    width: 150px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.price2 h1{
+    font-size: 22px;
+}
+.price2 span{
+    font-size: small;
+}
+.mtrl{
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.addtocart{
+    width: 200px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    background-color: orange;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.addtocart span{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.addtocart img{
+    height: 25px;
+    width: 25px;
+}
+
+@media(max-width:500px){
+    *{
+        overflow-x: hidden;
+    }
+    .filterbar{
+        width: 100%;
+    }
+    .sr-bar{
+        width: 150px;
+    }
+    .sr-bar input{
+        width: 120px;
+        height: 30px;
+    }
+    .sr-bar img{
+        width: 20px;
+        height: 20px;
+    }
+    .drop-down{
+        /* background-color: brown; */
+        width: 80px;
+    }
+    .color{
+        width: 60px;
+        font-size: 10px;
+
+    }
+    .products{
+        width: 100%;
+    }
+    .cards{
+        height: 250px;
+    }
+    .cards h1{
+        font-size: 10px;
+    }
+    .cards span{
+        font-size: 10px;
+    }
+    .cards button{
+        width: 80px;
+        height: 25px;
+        font-size: 10px;
+    }
+    .cards img{
+        height: 130px;
+    }
+    .price{
+        width: 100%;
+    }
+    .details{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 650px;
+    }
+    .details-1{
+        width: 60%;
+        height: 320px;
+
+    }
+    .details-1 h1{
+        font-size: small;
+    }
+    .chair{
+        height: 150px;
+    }
+    .angles img{
+        height: 50px;
+    }
+    .details-2{
+        width: 100%;
+        height: 350px;
+    }
+    .add{
+        width: 100%;
+      
+    }
+    .wish{
+        width: 32%;
+        height: 37px;
+    }
+    .free{
+        display: none;
+    }
+    .wish h1{
+        font-size: 10px;
+    }
+    .sale{
+        width: 80px;
+        height: 30px;
+    }
+    .sale h1{
+        font-size: 15px;
+    }
+    .mtrl{
+        width: 80%;
+    }
+    .addtocart{
+        width: 100px;
+        height:40px;
+    }
+    .addtocart img{
+        width: 20px;
+        height: 20px;
+    }
+    .addtocart span{
+        font-size: 10px;
+    }
+    .prices{
+        height: 80px;
+    }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

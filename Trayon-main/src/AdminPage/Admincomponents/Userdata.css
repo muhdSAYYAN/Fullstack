@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+    /* div {
+        margin: 20px;
+    } */
+  
+ .usersdata-container h2 {
+    color: #333;
+  }
+  
+  .user-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  

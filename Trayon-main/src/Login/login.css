@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,300&family=Poppins:wght@200;400;500&family=Raleway:ital,wght@0,100;0,200;1,100&family=Ubuntu:wght@300;400&display=swap');
+.checkoutt{
+    width: 80%;
+    margin: auto;
+    height: 500px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.order{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 350px;
+    border: 1px solid rgb(228, 227, 227);
+}
+.container{
+    width: 35%;
+    height: 500px;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.checkoutt form{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 450px;
+    /* background-color: brown; */
+    border: 1px solid rgb(239, 238, 238);
+}
+.bill{
+    font-size: 20px;
+    text-align: center;
+    opacity: 0.7;
+    font-family: 'Josefin Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+}
+.field{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    justify-content: space-evenly;
+}
+.field label{
+    font-family: 'Josefin Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+}
+.field input{
+    width: 220px;
+    height: 35px;
+    background-color: white;
+    border: 1px solid rgb(228, 228, 228);
+    outline: none;
+    font-size: small;
+    /* color: orange; */
+}
+.field textarea{
+    width: 220px;
+    height: 35px;
+    outline: none;
+    border: 1px solid gray;
+    background-color: white;
+    font-size: small;
+    border: 1px solid rgb(228, 228, 228);
+
+
+    
+}
+.popup-content p{
+    color: rgb(143, 139, 133);
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+   }
+.field button{
+    background-color: orange;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 3px;
+    border: hidden;
+}
+.container p{
+    font-size: 10px;
+    color: red;
+    text-align: center;
+}
+.qnt{
+    width: 300px;
+    height: 40px;
+    border-bottom: 1px solid rgb(210, 210, 210);
+    
+}
+.amnt{
+    height: 40px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(197, 195, 195);
+}
+.summary{
+    width: 300px;
+    height: 40px;
+    border-bottom: 1px solid rgb(202, 201, 201);
+}
+.total{
+    height: 40px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.summary h1{
+    font-size: 18px;
+    font-family: 'Josefin Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+    opacity: 0.7;
+}
+.amnt span{
+    opacity: 0.7;
+    font-family: 'Josefin Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+}
+.total span{
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+}
+.payment{
+    width: 300px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.ordernow{
+    background-color: white;
+    color: orange;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid orange;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+.continue{
+    background-color: orange;
+    color: white;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid orange;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+.success{
+    color: orange;
+}
+.cancel{
+    background-color: white;
+    color: orange;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid orange;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+@media(max-width:500px){
+    *{
+        overflow-x: hidden;
+    }
+    .checkoutt{
+        flex-direction: column;
+        height: 750px;
+        width: 100%;
+    }
+    .container{
+        width: 80%;
+        height: 400px;
+    }
+    .order{
+        width: 100%;
+        height: 300px;
+        border: hidden;
+    }
+    .container form{
+        height: 400px;
+        width: 100%;
+    }
+    .field{
+        height: 30px;
+    }
+    .field input{
+        width: 150px;
+        height: 30px;
+    }
+    .field textarea{
+        width: 150px;
+
+        height: 30px;
+    }
+   .field button{
+    width: 100px;
+    height: 25px;
+   }
+   .payment button{
+    width: 150px;
+    font-size: 15px;
+   }
+   .payment{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   
+}

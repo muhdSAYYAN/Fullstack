@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&family=Raleway:ital,wght@0,100;0,200;1,100&family=Ubuntu:wght@300;400&display=swap');
+
+.cartitems{
+    display: flex;
+    flex-direction: column;
+}
+.cartItem{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid rgb(210, 208, 208);
+}
+.cartimage{
+    width: 150px;
+    height: 160px;
+}
+.quantity{
+    width: 120px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.dts{
+    width: 83%;
+    height: 60px;
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.dts span{
+    font-size: 14px;
+    color: rgb(208, 136, 4);
+    
+}
+.desc{
+    height: 100px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.pricecut{
+    width: 100px;
+    height: 60px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.pricecut span{
+    text-decoration: line-through;
+}
+.desc span{
+    font-size: 10px;
+    opacity: 0.7;
+    color: rgb(151, 81, 1);
+}
+.h11{
+    color: orange;
+    text-align: center;
+    font-size: 20px;
+}
+.checkout{
+    width: 400px;
+    height: 350px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.apply{
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    border-color: 1px solid rgb(28, 26, 24);
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid orange;
+
+}
+.apply img{
+    height: 35px;
+    width: 30px;
+}
+.apply span{
+    color: orange;
+    font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+}
+.pay{
+    width: 350px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.pay span{
+    font-size: small;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+.btns{
+    width: 350px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn1{
+    border: hidden;
+    background-color: orange;
+    color: white;
+    height: 40px;
+    width: 160px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 5px;
+}
+.shopping{
+    border: 2px solid orange;
+    background-color: white;
+    color: orange;
+    height: 40px;
+    width: 160px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 5px;
+
+}
+.brand{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.brand h3{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    opacity: 0.6;
+}
+.pay h6{
+    color: rgb(128, 2, 2);
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+.delete{
+    width: 35px;
+    height: 35px;
+}
+@media(max-width:500px){
+    *{
+        overflow-x: hidden;
+    }
+    .cartItem{
+        width: 100%;
+        height: 100px;
+    }
+    .cartimage{
+        width: 60px;
+        height: 80px;
+    }
+    .quantity{
+        flex-direction: column;
+        height: 80px;
+        width: 60px;
+    }
+    .desc{
+        width: 150px;
+        height: 100%;
+    }
+    .desc p{
+        font-size: 10px;
+    }
+    .brand{
+        
+        display: none;
+    }
+    .delete{
+        height: 25px;
+        width: 25px;
+    }
+    .pricecut{
+        width: 60px;
+    }
+    .dts{
+    display: none;
+    }
+    .pricecut p,span{
+        font-size: 14px;
+    }
+    .quantity label{
+        font-size: 12px;
+    }
+   .quantity select{
+    border: hidden;
+   }
+   .checkout{
+    width: 100%;
+   }
+   .pay{
+    height: 40px;
+   }
+   .apply{
+    width: 180px;
+    height: 40px;
+   }
+   .apply span{
+    font-size: 10px;
+   }
+
+}    
