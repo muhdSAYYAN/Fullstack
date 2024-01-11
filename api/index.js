@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import authRoute from "./routes/auth.js"
 import alluserRoute from "./routes/users.js"
+import  productRoute  from "./routes/addProduct.js"
 
 const app = express();
 
@@ -18,6 +19,8 @@ app.use(
 
 app.use("/api/auth", authRoute);
 app.use("/api/user",alluserRoute);
+app.use("/api/addProduct",productRoute);
+
 
 
 app.listen(8700,()=>{

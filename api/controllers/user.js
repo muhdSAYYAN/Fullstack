@@ -21,3 +21,56 @@ export const getAllSellers =(req,res)=>{
     })
   
 }
+
+export const blockUsers =(req,res)=>{
+   
+    const userId = req.params.userId;
+
+    // console.log(userId)
+
+    const q = `UPDATE user SET blocklist = 'block' WHERE id = ? `
+  
+    db.query(q, [userId], (err, data) => {
+        if (err) return res.status(500).json(err);
+        return res.status(200).json({ message: 'User blocked successfully' });
+      });
+
+}  
+
+export const getBlockedlist =(req,res)=>{
+    
+    const q = "SELECT id, username, name, email FROM user  WHERE blocklist='block'"
+
+    db.query(q, (err,data)=>{
+        if (err) return res.status(500).json(err);
+        return res.status(200).json(data)
+        
+    })
+    // console.log(res.data)
+}
+
+export const unBlockUsers =(req,res)=>{
+
+    const userId = req.params.userId;
+ 
+    const q = "UPDATE user SET blocklist = '' WHERE id = ? "
+
+    db.query(q,[userId],(err,data)=>{
+        if(err) return res.status(500).json(err)
+        return res.status(200).json({message:"unblocked successfully"})
+    })
+
+}
+
+export const deleteUser =(req,res)=>{
+     
+    const userId = req.params.userId;
+
+    const q = "DELETE FROM user WHERE id = ?"
+
+    db.query(q,[userId],(err,data)=>{
+        if(err) return res.status(500).json(err)
+        return res.status(200).json({message:"user gdeleted successfully"})
+    })
+ 
+}

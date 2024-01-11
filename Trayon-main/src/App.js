@@ -12,6 +12,9 @@ import Seller from './SellerPage/Seller/Seller';
 import Admin from './AdminPage/Admin';
 import Usersdata from './AdminPage/Admincomponents/Usersdata';
 import Sellerdata from './AdminPage/Admincomponents/Sellerdata';
+import Blocklist from './AdminPage/Admincomponents/Blocklist';
+import Myproducts from './SellerPage/Seller/SellerComponents/Myproducts';
+import UploadProduct from './SellerPage/Seller/SellerComponents/UploadProduct';
 
 
 
@@ -30,9 +33,11 @@ function App() {
               <Route path='/admin' element={<Admin/>}/>
               <Route path='/allusers' element={<Usersdata/>}/>
               <Route path='/allsellers' element={<Sellerdata/>}/>
+              <Route path='/blockedlist' element={<Blocklist/>}/>
 
               <Route path='/seller' element={<Seller />} />
-          
+              <Route path='/myproduct' element={<Myproducts />} />
+              <Route path='/addproduct' element={<UploadProduct />} />
        
     
                     <Route index element={<Home />} />

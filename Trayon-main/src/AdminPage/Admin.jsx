@@ -48,7 +48,7 @@ const Admin = () => {
           </div>
           </Link>
 
-          <Link to="/allusers" className="admineritemslink">
+          <Link to="/blockedlist" className="admineritemslink">
           <div className="admineritems">
             <img src={block} alt="" srcset="" />
             <h6>Blocked List</h6>

@@ -9,12 +9,33 @@ const Usersdata = () => {
     const fetchUsers = async ()=>{
         try{
             const res = await axios.get("http://localhost:8700/api/user/getAllUsers");
-            console.log(res.data)
+            // console.log(res.data)
             setUsers(res.data)
         }catch(err){
             console.log(err)
         }
     }
+
+    const handleBlockUser = async (userId) => {
+      try {
+        // console.log('Blocking user with ID:', userId);
+        await axios.put(`http://localhost:8700/api/user/blockUsers/${userId}`, { userId });
+        setUsers((prevUsers) => prevUsers.filter((user) => user.id !== userId));
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    const handleDeleteUser = async (userId) => {
+      try {
+        console.log('delete user with ID:', userId);
+        await axios.delete(`http://localhost:8700/api/user/deleteUser/${userId}`, { userId });
+        setUsers((prevUsers) => prevUsers.filter((user) => user.id !== userId));
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
 
     useEffect(()=>{
         fetchUsers();
@@ -30,15 +51,20 @@ const Usersdata = () => {
           <th>Username</th>
           <th>Email</th>
           <th>Name</th>
+          <th>Actions</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody >
         {users.map((user) => (
           <tr key={user.id}>
             <td>{user.id}</td>
             <td>{user.username}</td>
             <td>{user.email}</td>
             <td>{user.name}</td>
+            <td style={{display:"flex",gap:"20px"}}>
+                <button className='block' onClick={()=>handleBlockUser(user.id)}>block</button>
+                <button className='delete' onClick={()=>handleDeleteUser(user.id)}>delete</button>
+            </td>
           </tr>
         ))}
       </tbody>
