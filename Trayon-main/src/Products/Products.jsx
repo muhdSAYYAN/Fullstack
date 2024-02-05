@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./pr.css"
 import sr from "./search.png"
 import allproducts from './Prdata'
 import { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link} from 'react-router-dom'
+import axios from 'axios'
+import Mycontext, { ContProvider } from '../context/Mycontext'
+
+
+
 export const Products = () => {
+ 
+  const {items,setItems} = useContext(ContProvider);
+
+  console.log(items)
+
   const [data, setData] = useState(allproducts);
   const navigate = useNavigate();
 
@@ -38,7 +48,21 @@ export const Products = () => {
   }, []);
 
 
- 
+  // const [product,setProduct] = useState([]);
+
+  //       const getProduct = async ()=>{
+  //           try{
+  //               const res = await axios.get("http://localhost:8700/api/addProduct/getProduct");
+  //               console.log(res.data)
+  //               setProduct(res.data)
+  //           }catch(err){
+  //               console.log(err)
+  //           }
+  //       }
+
+  //       useEffect(()=>{
+  //           getProduct()
+  //       },[])
 
 
   return (
@@ -96,11 +120,13 @@ export const Products = () => {
   </ul>
 </div>
     </div>
+
+
     <div className="products">
-      {data.map((item)=>{
+      {items.map((item)=>{
         return(
           <div onClick={()=> navigate(`/products/${item.id}`)} className='cards'>
-            <img src={item.image} alt="" />
+            <img src={`/upload/${item.pimg}`} alt="" />
             <h1>{item.pname}</h1>
             <div className='price'>
             <span>₹{item.price}/-</span>

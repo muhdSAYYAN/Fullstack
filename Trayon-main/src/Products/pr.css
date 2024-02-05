@@ -71,11 +71,12 @@
     border: 3px solid orange;
     background-color: rgb(254, 253, 253);
     height: 35px;
-    width: 100px;
+    width: 150px;
     border-radius: 5px;
     color:orange;
     font-size: small;
     font-family: "Poppins", sans-serif;
+    text-align: center;
 }
 .cards span{
     font-size: 15px;
@@ -342,8 +343,9 @@
     .details-1 h1{
         font-size: small;
     }
-    .chair{
-        height: 150px;
+    .eeeeee{
+        width: 100px;
+        height: 100px;
     }
     .angles img{
         height: 50px;

@@ -5,4 +5,4 @@ export const db = mysql.createConnection({
     user:"root",
     password:"SAYYANsql@327",
     database:"login"
-})
+})  

@@ -11,6 +11,9 @@ const Login = () => {
 
   const [err , setErr] = useState(null);
   const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("user")) || null)
+  
+ 
+  console.log(currentUser)
 
   const handleChange = (e) =>{
     setInputs((prev) => ({...prev,[e.target.name]:e.target.value}));
@@ -25,7 +28,7 @@ const Login = () => {
       return;
     }
     try{
-      const res = await axios.post("http://localhost:8700/api/auth/login",inputs)
+      const res = await axios.post("http://localhost:8700/api/auth/login",inputs,{withCredentials:true})
       const userData = res.data
       setCurrentUser(userData);
       localStorage.setItem("user", JSON.stringify(userData));

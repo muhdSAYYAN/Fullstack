@@ -4,65 +4,66 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const UploadProduct = () => {
-  const [productData, setProductData] = useState({
-    pname: '',
-    price: 0,
-    quantity: 0,
-    description: '',
-    pimg: null, // The file input
+  
+  const [productData,setProductData] =useState({
+    pname:"",
+    price:0,
+    quantity:0,
+    description:"",
+    file:null,
   });
+  
+  const handleInput =(e)=>{
+    const{name, value} = e.target;
+    setProductData({...productData,[name]:value});
+  }
 
-  const handleInputChange = (e) => {
-    const { name, value, type } = e.target;
+  const handleFileChange = (e)=>{
+    const file = e.target.files[0];
+    setProductData({...productData, file})
+  }
 
-    // Check if the input is a file input
-    if (type === 'file') {
-      setProductData({ ...productData, [name]: e.target.files[0] });
-    } else {
-      setProductData({ ...productData, [name]: value });
+  const handleUploadData = async ()=>{
+    try{
+      const formData = new FormData();
+      formData.append("file",productData.file)
+      formData.append("pname",productData.pname)
+      formData.append("price",productData.price)
+      formData.append("quantity",productData.quantity)
+      formData.append("description",productData.description)
+
+
+      const res = await axios.post("http://localhost:8700/api/addProduct/uploadProduct", formData, { withCredentials: true, headers: { "Content-Type": "multipart/form-data" }, },);
+      console.log(res.data);
     }
-  };
+    catch(err){
+      console.log(err)
+    }
+  }
 
-  const handleUpload = () => {
-    const formData = new FormData();
-    formData.append('pname', productData.pname);
-    formData.append('price', productData.price);
-    formData.append('quantity', productData.quantity);
-    formData.append('description', productData.description);
-    formData.append('pimg', productData.pimg);
-
-    // Assuming your API is running on http://localhost:8700
-    axios.post('http://localhost:8700/api/addProduct/uploadProduct', formData)
-      .then(response => {
-        console.log(response.data);
-        // Handle success or redirection if needed
-      })
-      .catch(error => {
-        console.error(error);
-        // Handle error
-      });
-  };
-
+ console.log(productData)
+   
   return (
     <div>
       <h2>Upload Product</h2>
       <form encType="multipart/form-data" style={{padding:"10px"}}>
         <label>Product Name:</label>
-        <input type="text" name="pname" value={productData.pname} onChange={handleInputChange} />
+        <input type="text" name="pname" onChange={handleInput}/>
 
         <label>Price:</label>
-        <input type="number" name="price" value={productData.price} onChange={handleInputChange} />
+        <input type="number" name="price" onChange={handleInput} />
 
         <label>Quantity:</label>
-        <input type="number" name="quantity" value={productData.quantity} onChange={handleInputChange} />
+        <input type="number" name="quantity"  onChange={handleInput} />
 
         <label>Description:</label>
-        <textarea name="description" value={productData.description} onChange={handleInputChange} />
+        <textarea name="description"  onChange={handleInput} />
 
-        <label>Product Image:</label>
-        <input type="file" name="pimg" onChange={handleInputChange} />
+       
+        <label>Image:</label>
+        <input type="file" name="file" onChange={handleFileChange}/>
 
-        <button type="button" onClick={handleUpload}>Upload Product</button>
+        <button type="button" onClick={handleUploadData}>Upload Product</button>
       </form>
     </div>
   );

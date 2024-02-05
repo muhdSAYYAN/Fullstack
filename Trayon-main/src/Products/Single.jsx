@@ -6,9 +6,14 @@ import wish from "./love.png"
 import cmp from "./left-and-right-arrows.png"
 import cart from "./add-to-basket.png"
 import { Shopcontext } from '../context/Shop-context';
+import { ContProvider } from '../context/Mycontext';
+import './pr.css'
 
 
 function Single() {
+ 
+  const {items} = useContext(ContProvider)
+
   const { productId } = useParams();
   const [product,setproduct] = useState();
   const {addTocart,cartitems} = useContext(Shopcontext);
@@ -28,7 +33,7 @@ function Single() {
 
 
   useEffect(()=>{
-    const data = allproducts.filter((item)=>{
+    const data = items.filter((item)=>{
       return item.id == productId;
     });
     setproduct(data[0]);
@@ -38,7 +43,7 @@ function Single() {
     return null;
   }
   
-    const {id,pname,image,pdts,category,material,price,image2,image3,image4,image5,image6,mrp} = product;
+    const {id,pname,pimg,pdts,category,material,price,image2,image3,image4,image5,image6,mrp} = product;
 
     
 
@@ -54,7 +59,9 @@ function Single() {
       <div className="details-1">
         <h1>{pname}</h1>
         <span>{pdts}</span>
-        <img src={photo || image2} alt="" className='chair'/>
+          
+        
+        <img src={ `/upload/${pimg}`} alt="" className='eeeeee' style={{width:"700px",height:"400px"}}/>
         <div className="angles">
           <img onClick={()=> setphoto(image2)} src={image2} alt="" />
           <img onClick={()=> setphoto(image3)} src={image3} alt="" />

@@ -22,7 +22,7 @@ export const Item = () => {
             <div onClick={()=> Navigate("Products")} className="bed">
               <img src={item.image} alt="" />
               <h1>{item.pname}</h1>
-              <Link to='Products'><button className="vm">View more</button></Link>
+              <Link to='/products'><button className="vm">View more</button></Link>
             </div>
           );
         })}
@@ -33,7 +33,7 @@ export const Item = () => {
             <div className="bed">
               <img src={item.image} alt="" />
               <h1>{item.pname}</h1>
-              <Link to='Products'><button>View more</button></Link>
+              <Link to='/products'><button>View more</button></Link>
             </div>
           );
         })}
@@ -51,7 +51,7 @@ export const Item = () => {
             <div className="bed">
               <img src={item.image} alt="" />
               <h1>{item.pname}</h1>
-              <Link to='Products'><button>View more</button></Link>
+              <Link to='/products'><button>View more</button></Link>
             </div>
           );
         })}

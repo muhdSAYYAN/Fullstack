@@ -64,7 +64,8 @@ export const unBlockUsers =(req,res)=>{
 
 export const deleteUser =(req,res)=>{
      
-    const userId = req.params.userId;
+    const newLocal = req.params.userId;
+    const userId = newLocal;
 
     const q = "DELETE FROM user WHERE id = ?"
 

@@ -15,6 +15,7 @@ import Sellerdata from './AdminPage/Admincomponents/Sellerdata';
 import Blocklist from './AdminPage/Admincomponents/Blocklist';
 import Myproducts from './SellerPage/Seller/SellerComponents/Myproducts';
 import UploadProduct from './SellerPage/Seller/SellerComponents/UploadProduct';
+import Mycontext, { ContProvider } from './context/Mycontext';
 
 
 
@@ -22,8 +23,10 @@ function App() {
 
   return (
     <div className="App">
+      <Mycontext>
       <Shopcontextprovider>
       <BrowserRouter>
+      <Navbar />
       <Routes>
 
          
@@ -39,18 +42,28 @@ function App() {
               <Route path='/myproduct' element={<Myproducts />} />
               <Route path='/addproduct' element={<UploadProduct />} />
        
-    
+                 
+              {/* <Route
+              path='/main'
+              element={
+                <>
+                  <Navbar />
+                  <Routes> */}
                     <Route index element={<Home />} />
-                    <Route path='/Products' element={<Products />} />
+                    <Route path='/products' element={<Products />} />
                     <Route path='/products/:productId' element={<Single />} />
                     <Route path='/cart' element={<Cart />} />
-             
+                  {/* </Routes>
+                </>
+              }
+            /> */}
           
           <Route path='*' element={<Navigate to='/log' />} />
 
       </Routes>
       </BrowserRouter>
       </Shopcontextprovider>
+      </Mycontext>
    
     </div>
   );

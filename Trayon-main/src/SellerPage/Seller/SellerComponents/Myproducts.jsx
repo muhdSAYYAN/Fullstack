@@ -19,10 +19,21 @@ import React, { useEffect, useState } from 'react'
             getProduct()
         },[])
 
+        const handleDelete = async (productId) => {
+            try {
+              await axios.delete(`http://localhost:8700/api/addProduct/dltdeleteProduct/${productId}`,{ withCredentials: true });
+              setData((prev) => prev.filter((Product) => Product.id !== productId));
+            } catch (err) {
+              console.log(err);
+            }
+          };
+        
+        // console.log(data.img)
+
     return (
-        <div className="usersdata-container">
+        <div className="Productsdata-container">
         <h2>My Products</h2>
-        <table className="usersdata-table">
+        <table className="Productsdata-table">
         <thead>
             <tr>
             <th>ID</th>
@@ -35,16 +46,16 @@ import React, { useEffect, useState } from 'react'
             </tr>
         </thead>
         <tbody >
-        {data.map((user) => (
-          <tr key={user.id}>
-            <td>{user.id}</td>
-            <td>{user.pname}</td>
-            <td><img style={{width:"200px",height:"200px",padding:"2px"}} src={user.pimg} alt="" srcset="" /></td>
-            <td>{user.price}</td>
-            <td>{user.description}</td>
-            <td>{user.quantity}</td>
+        {data.map((Product) => (
+          <tr key={Product.id}>
+            <td>{Product.id}</td>
+            <td>{Product.pname}</td>
+            <td><img style={{width:"200px",height:"200px",padding:"2px"}} src={`/upload/${Product.pimg}`}alt="" srcset="" /></td>
+            <td>{Product.price}</td>
+            <td>{Product.description}</td>
+            <td>{Product.quantity}</td>
             <td >
-                <button className='delete'>delete</button>
+                <button className='delete' onClick={()=>handleDelete(Product.id)}>delete</button>
             </td>
           </tr>
         ))}

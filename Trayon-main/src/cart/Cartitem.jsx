@@ -3,7 +3,8 @@ import { Shopcontext } from '../context/Shop-context';
 import dlt from "./delete.png"
 
 export const Cartitem = (props) => {
-  const { id, pname, image, price,mrp,pdts,material } = props.data;
+  
+  const { id, pname, pimg, price,mrp,pdts,material } = props.data;
   const { cartitems, addTocart, removeFromcart,removeFromCart } = useContext(Shopcontext);
 
   const [selectedQuantity, setSelectedQuantity] = useState(cartitems[id]);
@@ -29,7 +30,7 @@ export const Cartitem = (props) => {
   return (
     <>
     <div className='cartItem'>
-      <img src={image} alt="" className='cartimage'/>
+      <img src={ `/upload/${pimg}`} alt="" className='cartimage'/>
       <div className="desc">
         <p>{pname}</p>
         <div className="brand">

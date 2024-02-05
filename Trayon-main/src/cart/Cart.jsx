@@ -4,16 +4,32 @@ import { Cartitem } from './Cartitem';
 import { Shopcontext } from '../context/Shop-context';
 import './cart.css'
 import { Link } from 'react-router-dom';
+import { ContProvider } from '../context/Mycontext';
+import axios from 'axios';
 
 export const Cart = () => {
+
+  const {items} = useContext(ContProvider)
+
+  
   const { cartitems,getTotal } = useContext(Shopcontext);
   const totalamount = getTotal();
-  const delivarypercent = 5;
-  const discountPercent = 10;
+  const delivarypercent = 2.5;
+  const discountPercent = 2;
   const discountAmount = (totalamount * discountPercent) / 100;
   const delivaryAmount = (totalamount * delivarypercent) / 100;
 
 const totalPayableAmount = (totalamount + delivaryAmount) - discountAmount;
+
+const handlePlaceorder = async ()=>{
+ try{
+  await axios.post("http://localhost:8700/api/order/postOrder",{
+    products: items,
+  })
+ }catch(err){
+  console.log(err)
+ }
+}
 
 
 
@@ -30,7 +46,7 @@ const totalPayableAmount = (totalamount + delivaryAmount) - discountAmount;
    
     <div className='cart'>
       <div className="cartitems">
-        {allproducts.map((product) => {
+        {items.map((product) => {
           if (cartitems[product.id] !== 0) {
             return (
               <div key={product.id}>
@@ -70,7 +86,7 @@ const totalPayableAmount = (totalamount + delivaryAmount) - discountAmount;
         <div className="btns">
        
        <Link to="/products"><button className='shopping'>Continue shopping</button></Link>
-       <Link to='/login'><button className='btn1'>Checkout</button></Link>
+       <button className='btn1' onClick={handlePlaceorder}>Place Order</button>
 
         </div>
        

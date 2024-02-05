@@ -56,12 +56,14 @@ export const login =(req,res)=>{
     return res.status(300).json("wrong password or username");
     
     const token = jwt.sign({id:data[0].id} , "secretkey")
+   
+    // console.log(token)
 
     const { password, ...others } = data[0];
-
+// console.log(data[0]);
     res.cookie("accessToken", token, {
-        httpOnly: true,
-    }).status(201).json(others);
+        httpOnly: true
+        }).status(201).json(others);
    })
 }
 
