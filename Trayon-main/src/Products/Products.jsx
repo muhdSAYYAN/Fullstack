@@ -125,14 +125,14 @@ export const Products = () => {
     <div className="products">
       {items.map((item)=>{
         return(
-          <div onClick={()=> navigate(`/products/${item.id}`)} className='cards'>
+          <div onClick={()=> navigate(`/nav/products/${item.id}`)} className='cards'>
             <img src={`/upload/${item.pimg}`} alt="" />
             <h1>{item.pname}</h1>
             <div className='price'>
             <span>₹{item.price}/-</span>
             <span className='emi'>EMI from ₹105</span>
             </div>
-            <Link to={`/products/${item.id}`}><button>View Product</button></Link>
+            <Link to={`/nav/products/${item.id}`}><button>View Product</button></Link>
           </div>
         )
       })}

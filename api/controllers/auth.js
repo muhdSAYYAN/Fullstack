@@ -17,7 +17,7 @@ export const register =(req,res)=>{
     const salt = bcrypt.genSaltSync(10);
     const hashPassword = bcrypt.hashSync(req.body.password, salt);
      
-    const insertQuery = 'INSERT INTO user (`username`,`password`,`name`,`email`,`usertype`) VALUES (?)';
+    const insertQuery = 'INSERT INTO user (`username`,`password`,`name`,`email`,`usertype`,`address`,`ph`) VALUES (?)';
     
     const values = [
         req.body.username,
@@ -25,6 +25,8 @@ export const register =(req,res)=>{
         req.body.name,
         req.body.email,
         "user",
+        req.body.address,
+        req.body.ph
     ]
     
     db.query(insertQuery, [values], (err, data) => {

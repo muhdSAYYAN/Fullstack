@@ -13,7 +13,7 @@ const Mycontext = ({children}) => {
     const getProduct = async ()=>{
         try{
             const res = await axios.get("http://localhost:8700/api/addProduct/getProduct",{withCredentials:true});
-            console.log(res.data)
+            // console.log(res.data)
             setItems(res.data)
         }catch(err){
             console.log(err)

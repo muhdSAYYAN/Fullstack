@@ -34,7 +34,7 @@ const Login = () => {
       localStorage.setItem("user", JSON.stringify(userData));
       console.log('mydata: ',userData)
       if(userData.usertype === "user"){
-        navigate("/")
+        navigate("/nav/home")
       }else if(userData.usertype === "admin"){
         navigate("/admin")
       }else if(userData.usertype === "seller"){

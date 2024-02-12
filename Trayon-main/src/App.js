@@ -16,6 +16,8 @@ import Blocklist from './AdminPage/Admincomponents/Blocklist';
 import Myproducts from './SellerPage/Seller/SellerComponents/Myproducts';
 import UploadProduct from './SellerPage/Seller/SellerComponents/UploadProduct';
 import Mycontext, { ContProvider } from './context/Mycontext';
+import Orders from './SellerPage/Seller/SellerComponents/Orders';
+import RecentOrders from './cart/RecentOrders';
 
 
 
@@ -26,7 +28,7 @@ function App() {
       <Mycontext>
       <Shopcontextprovider>
       <BrowserRouter>
-      <Navbar />
+     
       <Routes>
 
          
@@ -41,22 +43,17 @@ function App() {
               <Route path='/seller' element={<Seller />} />
               <Route path='/myproduct' element={<Myproducts />} />
               <Route path='/addproduct' element={<UploadProduct />} />
-       
-                 
-              {/* <Route
-              path='/main'
-              element={
-                <>
-                  <Navbar />
-                  <Routes> */}
-                    <Route index element={<Home />} />
-                    <Route path='/products' element={<Products />} />
-                    <Route path='/products/:productId' element={<Single />} />
-                    <Route path='/cart' element={<Cart />} />
-                  {/* </Routes>
-                </>
-              }
-            /> */}
+              <Route path='/orders' element={<Orders />} />
+             
+              <Route path='/nav' element={<Navbar />}>
+                      <Route index element={<Home />} /> 
+                      <Route path='home' element={<Home />} />
+                      <Route path='products' element={<Products />} />
+                      <Route path='products/:productId' element={<Single />} />
+                      <Route path='cart' element={<Cart />} />
+                      <Route path='recent' element={<RecentOrders />} />
+             </Route>
+
           
           <Route path='*' element={<Navigate to='/log' />} />
 

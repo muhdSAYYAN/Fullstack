@@ -19,10 +19,10 @@ export const Item = () => {
         </div>
         {products.map((item) => {
           return (
-            <div onClick={()=> Navigate("Products")} className="bed">
+            <div onClick={()=> Navigate("/nav/products")} className="bed">
               <img src={item.image} alt="" />
               <h1>{item.pname}</h1>
-              <Link to='/products'><button className="vm">View more</button></Link>
+              <Link to='/nav/products'><button className="vm">View more</button></Link>
             </div>
           );
         })}
@@ -33,7 +33,7 @@ export const Item = () => {
             <div className="bed">
               <img src={item.image} alt="" />
               <h1>{item.pname}</h1>
-              <Link to='/products'><button>View more</button></Link>
+              <Link to='/nav/products'><button>View more</button></Link>
             </div>
           );
         })}
@@ -51,7 +51,7 @@ export const Item = () => {
             <div className="bed">
               <img src={item.image} alt="" />
               <h1>{item.pname}</h1>
-              <Link to='/products'><button>View more</button></Link>
+              <Link to='/nav/products'><button>View more</button></Link>
             </div>
           );
         })}

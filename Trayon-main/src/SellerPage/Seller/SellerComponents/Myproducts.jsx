@@ -8,13 +8,14 @@ import React, { useEffect, useState } from 'react'
         const getProduct = async ()=>{
             try{
                 const res = await axios.get("http://localhost:8700/api/addProduct/getProduct");
-                console.log(res.data)
+                // console.log(res.data)
                 setData(res.data)
             }catch(err){
                 console.log(err)
             }
         }
-
+       
+        console.log(data)
         useEffect(()=>{
             getProduct()
         },[])

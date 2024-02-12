@@ -2,9 +2,26 @@ import React, { useContext, useState,useEffect } from 'react';
 import { Shopcontext } from '../context/Shop-context';
 import dlt from "./delete.png"
 
-export const Cartitem = (props) => {
+export const Cartitem = ({data}) => {
+
+
+
   
-  const { id, pname, pimg, price,mrp,pdts,material } = props.data;
+
+  // setOrderData(data)
+
+  const { id, pname, pimg, price,mrp,pdts,material } = data;
+  // console.log(data)
+  // useEffect(() => {
+  //   setOrderData((prev) => ({...prev, data}));
+  // }, [id]);
+
+  // console.log(orderData)
+
+
+
+  // console.log(data)
+
   const { cartitems, addTocart, removeFromcart,removeFromCart } = useContext(Shopcontext);
 
   const [selectedQuantity, setSelectedQuantity] = useState(cartitems[id]);

@@ -7,6 +7,8 @@ const Register = () => {
   const [inputs, setInputs] = useState({
     name: '',
     email: '',
+    address:'',
+    ph:'',
     username: '',
     password: '',
   });
@@ -51,6 +53,20 @@ const Register = () => {
             type="email"
             name="email"
             value={inputs.email}
+            onChange={handleChange}
+          />
+          <label htmlFor="email">Address:</label>
+          <input
+            type="text"
+            name="address"
+            value={inputs.address}
+            onChange={handleChange}
+          />
+          <label htmlFor="email">Mobile No:</label>
+          <input
+            type="number"
+            name="ph"
+            value={inputs.ph}
             onChange={handleChange}
           />
           <label htmlFor="firstName">User Name:</label>

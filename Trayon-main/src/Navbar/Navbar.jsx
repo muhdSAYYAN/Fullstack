@@ -18,7 +18,7 @@ export const Navbar = () => {
     <>
     <div className='navbar'>
         <div className="logo">
-            <Link to={'/'} className='trayon'><h1>TRAYON</h1></Link>
+            <Link to={'/nav/home'} className='trayon'><h1>TRAYON</h1></Link>
 
         </div>
         <div className="search">
@@ -29,15 +29,17 @@ export const Navbar = () => {
 
         </div>
         <div className="icons">
-            <Link to='/'><img src={home} alt="" /></Link>
-            <Link to='/cart'>
+            <Link to='/nav/home'><img src={home} alt="" /></Link>
+            <Link to='/nav/cart'>
               <div className="cart-icon">
                 <img src={logo} alt="" />
                 {itemCount > 0 && <span className="item-count">{itemCount}</span>}
               </div>
             </Link>
             
+            <Link to='/nav/recent'>  
             <img src={contact} alt="" />
+            </Link>
 
         </div>
 

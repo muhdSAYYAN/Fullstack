@@ -41,7 +41,7 @@ const Seller = () => {
           </div>
           </Link>
 
-          <Link to="/myproduct" className='admineritemslink'>
+          <Link to="/orders" className='admineritemslink'>
           <div className="selleritems">
             <img src={orders} alt="" srcset="" />
             <h6>Orders</h6>

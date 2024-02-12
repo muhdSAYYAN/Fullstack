@@ -55,3 +55,10 @@
    width: 40px;
    height: 40px;
 }
+
+.Productsdata-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}

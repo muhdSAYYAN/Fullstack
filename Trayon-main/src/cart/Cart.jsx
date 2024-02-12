@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import allproducts from '../Products/Prdata';
 import { Cartitem } from './Cartitem';
 import { Shopcontext } from '../context/Shop-context';
@@ -11,8 +11,9 @@ export const Cart = () => {
 
   const {items} = useContext(ContProvider)
 
+  // console.log(items);
   
-  const { cartitems,getTotal } = useContext(Shopcontext);
+  const { cartitems,getTotal,clearCart } = useContext(Shopcontext);
   const totalamount = getTotal();
   const delivarypercent = 2.5;
   const discountPercent = 2;
@@ -21,15 +22,54 @@ export const Cart = () => {
 
 const totalPayableAmount = (totalamount + delivaryAmount) - discountAmount;
 
-const handlePlaceorder = async ()=>{
- try{
-  await axios.post("http://localhost:8700/api/order/postOrder",{
-    products: items,
-  })
- }catch(err){
-  console.log(err)
- }
-}
+// const[orderData,setOrderData] = useState([])
+
+const [userName, setUserName] = useState(null);
+
+  useEffect(() => {
+    const usernameFromLocalStorage = () => {
+      const localData = localStorage.getItem('user');
+
+      if (localData !== null) {
+        setUserName(JSON.parse(localData));
+      } else {
+        console.log('object');
+      }
+    };
+
+    usernameFromLocalStorage();
+  }, []);
+
+  // console.log('dfsfdf', userName.username);
+
+
+const handlePlaceorder = async () => {
+  const updatedOrderData = [];
+
+  items.forEach(item => {
+    if (cartitems[item.id] > 0) {
+      updatedOrderData.push(item);
+    }
+  });
+  
+  console.log("Updated Order Data:", updatedOrderData);
+
+  try {
+    const requestBody = {
+      orderData: updatedOrderData,
+      userName: userName
+    };
+
+    await axios.post("http://localhost:8700/api/order/postOrder", requestBody, { withCredentials: true });
+    alert("Order placed successfully");
+    clearCart();
+
+  } catch (error) {
+    console.error("Error placing order:", error);
+  }
+};
+
+
 
 
 
@@ -85,7 +125,7 @@ const handlePlaceorder = async ()=>{
         </div>
         <div className="btns">
        
-       <Link to="/products"><button className='shopping'>Continue shopping</button></Link>
+       <Link to="/nav/products"><button className='shopping'>Continue shopping</button></Link>
        <button className='btn1' onClick={handlePlaceorder}>Place Order</button>
 
         </div>
